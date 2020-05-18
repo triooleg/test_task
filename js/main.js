@@ -1,2 +1,52 @@
-var map,service,infowindow,request={query:"Ukraine",fields:["name","geometry"]},viewZoom=6;function initMap(){var e=new google.maps.LatLng(-33.867,151.195);infowindow=new google.maps.InfoWindow,map=new google.maps.Map(document.getElementById("map"),{center:e,zoom:viewZoom}),(service=new google.maps.places.PlacesService(map)).findPlaceFromQuery(request,function(e,o){if(o===google.maps.places.PlacesServiceStatus.OK){for(var n=0;n<e.length;n++)createMarker(e[n]);map.setCenter(e[0].geometry.location)}})}function createMarker(e){var o=new google.maps.Marker({map:map,position:e.geometry.location});google.maps.event.addListener(o,"click",function(){infowindow.setContent(e.name),infowindow.open(map,this)})}$(".name").mouseover(function(){request.query=$(this).text(),viewZoom=Number($(this).attr("zoom")),setTimeout(initMap(),1e3)});
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4uanMiXSwibmFtZXMiOlsibWFwIiwic2VydmljZSIsImluZm93aW5kb3ciLCJyZXF1ZXN0IiwicXVlcnkiLCJmaWVsZHMiLCJ2aWV3Wm9vbSIsImluaXRNYXAiLCJzeWRuZXkiLCJnb29nbGUiLCJtYXBzIiwiTGF0TG5nIiwiSW5mb1dpbmRvdyIsIk1hcCIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiLCJjZW50ZXIiLCJ6b29tIiwicGxhY2VzIiwiUGxhY2VzU2VydmljZSIsImZpbmRQbGFjZUZyb21RdWVyeSIsInJlc3VsdHMiLCJzdGF0dXMiLCJQbGFjZXNTZXJ2aWNlU3RhdHVzIiwiT0siLCJpIiwibGVuZ3RoIiwiY3JlYXRlTWFya2VyIiwic2V0Q2VudGVyIiwiZ2VvbWV0cnkiLCJsb2NhdGlvbiIsInBsYWNlIiwibWFya2VyIiwiTWFya2VyIiwicG9zaXRpb24iLCJldmVudCIsImFkZExpc3RlbmVyIiwic2V0Q29udGVudCIsIm5hbWUiLCJvcGVuIiwidGhpcyIsIiQiLCJtb3VzZW92ZXIiLCJ0ZXh0IiwiTnVtYmVyIiwiYXR0ciIsInNldFRpbWVvdXQiXSwibWFwcGluZ3MiOiJBQUFBLElBQUFBLElBQ0FDLFFBQ0FDLFdBRUFDLFFBQUEsQ0FDQUMsTUFBQSxVQUNBQyxPQUFBLENBQUEsT0FBQSxhQUdBQyxTQUFBLEVBRUEsU0FBQUMsVUFDQSxJQUFBQyxFQUFBLElBQUFDLE9BQUFDLEtBQUFDLFFBQUEsT0FBQSxTQUVBVCxXQUFBLElBQUFPLE9BQUFDLEtBQUFFLFdBRUFaLElBQUEsSUFBQVMsT0FBQUMsS0FBQUcsSUFDQUMsU0FBQUMsZUFBQSxPQUFBLENBQUFDLE9BQUFSLEVBQUFTLEtBQUFYLFlBSUFMLFFBQUEsSUFBQVEsT0FBQUMsS0FBQVEsT0FBQUMsY0FBQW5CLE1BRUFvQixtQkFBQWpCLFFBQUEsU0FBQWtCLEVBQUFDLEdBQ0EsR0FBQUEsSUFBQWIsT0FBQUMsS0FBQVEsT0FBQUssb0JBQUFDLEdBQUEsQ0FDQSxJQUFBLElBQUFDLEVBQUEsRUFBQUEsRUFBQUosRUFBQUssT0FBQUQsSUFDQUUsYUFBQU4sRUFBQUksSUFHQXpCLElBQUE0QixVQUFBUCxFQUFBLEdBQUFRLFNBQUFDLGFBS0EsU0FBQUgsYUFBQUksR0FDQSxJQUFBQyxFQUFBLElBQUF2QixPQUFBQyxLQUFBdUIsT0FBQSxDQUNBakMsSUFBQUEsSUFDQWtDLFNBQUFILEVBQUFGLFNBQUFDLFdBR0FyQixPQUFBQyxLQUFBeUIsTUFBQUMsWUFBQUosRUFBQSxRQUFBLFdBQ0E5QixXQUFBbUMsV0FBQU4sRUFBQU8sTUFDQXBDLFdBQUFxQyxLQUFBdkMsSUFBQXdDLFFBSUFDLEVBQUEsU0FBQUMsVUFBQSxXQUNBdkMsUUFBQUMsTUFBQXFDLEVBQUFELE1BQUFHLE9BQ0FyQyxTQUFBc0MsT0FBQUgsRUFBQUQsTUFBQUssS0FBQSxTQUVBQyxXQUFBdkMsVUFBQSIsImZpbGUiOiJtYWluLmpzIiwic291cmNlc0NvbnRlbnQiOlsidmFyIG1hcDtcclxudmFyIHNlcnZpY2U7XHJcbnZhciBpbmZvd2luZG93O1xyXG5cclxudmFyIHJlcXVlc3QgPSB7XHJcbiAgcXVlcnk6ICdVa3JhaW5lJyxcclxuICBmaWVsZHM6IFsnbmFtZScsICdnZW9tZXRyeSddXHJcbn07XHJcblxyXG52YXIgdmlld1pvb20gPSA2O1xyXG5cclxuZnVuY3Rpb24gaW5pdE1hcCgpIHtcclxuICB2YXIgc3lkbmV5ID0gbmV3IGdvb2dsZS5tYXBzLkxhdExuZygtMzMuODY3LCAxNTEuMTk1KTtcclxuXHJcbiAgaW5mb3dpbmRvdyA9IG5ldyBnb29nbGUubWFwcy5JbmZvV2luZG93KCk7XHJcblxyXG4gIG1hcCA9IG5ldyBnb29nbGUubWFwcy5NYXAoXHJcbiAgICBkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgnbWFwJyksIHsgY2VudGVyOiBzeWRuZXksIHpvb206IHZpZXdab29tIH0pO1xyXG5cclxuXHJcblxyXG4gIHNlcnZpY2UgPSBuZXcgZ29vZ2xlLm1hcHMucGxhY2VzLlBsYWNlc1NlcnZpY2UobWFwKTtcclxuXHJcbiAgc2VydmljZS5maW5kUGxhY2VGcm9tUXVlcnkocmVxdWVzdCwgZnVuY3Rpb24gKHJlc3VsdHMsIHN0YXR1cykge1xyXG4gICAgaWYgKHN0YXR1cyA9PT0gZ29vZ2xlLm1hcHMucGxhY2VzLlBsYWNlc1NlcnZpY2VTdGF0dXMuT0spIHtcclxuICAgICAgZm9yICh2YXIgaSA9IDA7IGkgPCByZXN1bHRzLmxlbmd0aDsgaSsrKSB7XHJcbiAgICAgICAgY3JlYXRlTWFya2VyKHJlc3VsdHNbaV0pO1xyXG4gICAgICB9XHJcblxyXG4gICAgICBtYXAuc2V0Q2VudGVyKHJlc3VsdHNbMF0uZ2VvbWV0cnkubG9jYXRpb24pO1xyXG4gICAgfVxyXG4gIH0pO1xyXG59XHJcblxyXG5mdW5jdGlvbiBjcmVhdGVNYXJrZXIocGxhY2UpIHtcclxuICB2YXIgbWFya2VyID0gbmV3IGdvb2dsZS5tYXBzLk1hcmtlcih7XHJcbiAgICBtYXA6IG1hcCxcclxuICAgIHBvc2l0aW9uOiBwbGFjZS5nZW9tZXRyeS5sb2NhdGlvblxyXG4gIH0pO1xyXG5cclxuICBnb29nbGUubWFwcy5ldmVudC5hZGRMaXN0ZW5lcihtYXJrZXIsICdjbGljaycsIGZ1bmN0aW9uICgpIHtcclxuICAgIGluZm93aW5kb3cuc2V0Q29udGVudChwbGFjZS5uYW1lKTtcclxuICAgIGluZm93aW5kb3cub3BlbihtYXAsIHRoaXMpO1xyXG4gIH0pO1xyXG59XHJcblxyXG4kKCcubmFtZScpLm1vdXNlb3ZlcihmdW5jdGlvbiAoKSB7XHJcbiAgcmVxdWVzdC5xdWVyeSA9ICQodGhpcykudGV4dCgpO1xyXG4gIHZpZXdab29tID0gTnVtYmVyKCQodGhpcykuYXR0cignem9vbScpKTtcclxuICBcclxuICBzZXRUaW1lb3V0KGluaXRNYXAoKSwgMTAwMCk7XHJcbn0pOyJdfQ==
+var map;
+var service;
+var infowindow;
+
+var request = {
+  query: 'Ukraine',
+  fields: ['name', 'geometry']
+};
+
+var viewZoom = 6;
+
+function initMap() {
+  var sydney = new google.maps.LatLng(-33.867, 151.195);
+
+  infowindow = new google.maps.InfoWindow();
+
+  map = new google.maps.Map(
+    document.getElementById('map'), { center: sydney, zoom: viewZoom });
+
+
+
+  service = new google.maps.places.PlacesService(map);
+
+  service.findPlaceFromQuery(request, function (results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+
+      map.setCenter(results[0].geometry.location);
+    }
+  });
+}
+
+function createMarker(place) {
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function () {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
+}
+
+$('.name').mouseover(function () {
+  request.query = $(this).text();
+  viewZoom = Number($(this).attr('zoom'));
+  
+  setTimeout(initMap(), 1000);
+});
